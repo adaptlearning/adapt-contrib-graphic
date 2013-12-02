@@ -1,7 +1,7 @@
 {
   "name": "adapt-contrib-graphic",
   "version": "0.0.1",
-  "description": "Description of your component",
+  "description": "Graphic component which dynamically displays small, medium and large images of different resolutions based upon device width",
   "main": "",
   "scripts": {
     "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
