@@ -6,12 +6,14 @@ define(function(require) {
     var Graphic = ComponentView.extend({
 
     	init: function() {
-    		// TODO -- Will the next line always be required?
-    		this.constructor.template = this.model.get('_component');
+            this.$('.widget').imageready(function(){
+                this.model.set('ready', true);
+            });
+
 			this.listenTo(Adapt, 'device:changed', this.resizeImage);
   		},
         postRender: function() {
-            this.resizeImage(Adapt.screenSize);
+            this.resizeImage(Adapt.device.screenSize);
             this.setReadyStatus();
             this.setCompletionStatus();
         },
