@@ -1,19 +1,19 @@
-<div class="inner">
+<div class="graphic-inner component-inner">
     {{#if title}}
-    <div class="title">
-        <h4 class="inner">
+    <div class="graphic-title component-title">
+        <h4 class="graphic-title-inner component-title-inner">
             {{{title}}}
         </h4>
     </div>
     {{/if}}
     {{#if body}}
-    <div class="body">
-        <p class="inner">
+    <div class="graphic-body component-body">
+        <div class="graphic-body-inner component-body-inner">
             {{{body}}}
-        </p>
+        </div
     </div>
     {{/if}}
-    <div class="widget">
+    <div class="graphic-widget component-widget">
         <img src="{{graphic.src}}" alt="{{graphic.alt}}" title="{{graphic.title}}" data-large="{{graphic.large}}" data-medium="{{graphic.medium}}" data-small="{{graphic.small}}"/>
     </div>
 </div>

@@ -6,7 +6,7 @@ define(function(require) {
     var Graphic = ComponentView.extend({
 
     	init: function() {
-            this.$('.widget').imageready(function(){
+            this.$('.graphic-widget').imageready(function(){
                 this.model.set('ready', true);
             });
 
@@ -18,8 +18,8 @@ define(function(require) {
             this.setCompletionStatus();
         },
         resizeImage: function(width) {
-    		var src = this.$('.widget img').attr('data-' + width);
-        	this.$('.widget img').attr('src', src);
+    		var src = this.$('.graphic-widget img').attr('data-' + width);
+        	this.$('.graphic-widget img').attr('src', src);
         }
     });
     
