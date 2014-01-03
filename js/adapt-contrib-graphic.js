@@ -5,7 +5,7 @@ define(function(require) {
 
     var Graphic = ComponentView.extend({
 
-        init: function() {
+        preRender: function() {
             this.listenTo(Adapt, 'device:changed', this.resizeImage);
         },
         postRender: function() {
@@ -13,10 +13,10 @@ define(function(require) {
             this.setCompletionStatus();
         },
         resizeImage: function(width) {
-            var src = this.$('.widget img').attr('data-' + width);
-            this.$('.widget img').attr('src', src);
+            var src = this.$('.graphic-widget img').attr('data-' + width);
+            this.$('.graphic-widget img').attr('src', src);
 
-            this.$('.widget').imageready(_.bind(function() {
+            this.$('.graphic-widget').imageready(_.bind(function() {
                 this.setReadyStatus();
             }, this));
         }
