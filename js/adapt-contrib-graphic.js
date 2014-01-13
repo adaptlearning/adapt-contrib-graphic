@@ -8,10 +8,12 @@ define(function(require) {
         preRender: function() {
             this.listenTo(Adapt, 'device:changed', this.resizeImage);
         },
+
         postRender: function() {
             this.resizeImage(Adapt.device.screenSize);
             this.setCompletionStatus();
         },
+        
         resizeImage: function(width) {
             var src = this.$('.graphic-widget img').attr('data-' + width);
             this.$('.graphic-widget img').attr('src', src);
