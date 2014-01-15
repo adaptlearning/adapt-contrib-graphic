@@ -11,7 +11,11 @@ define(function(require) {
 
         postRender: function() {
             this.resizeImage(Adapt.device.screenSize);
-            this.setCompletionStatus();
+            this.$('.graphic-widget').on('inview', _.bind(function(visible) {
+                if (visible) {
+                    this.setCompletionStatus();
+                }
+            }, this));
         },
         
         resizeImage: function(width) {
