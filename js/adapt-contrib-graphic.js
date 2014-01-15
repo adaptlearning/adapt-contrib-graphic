@@ -5,17 +5,22 @@ define(function(require) {
 
     var Graphic = ComponentView.extend({
 
+        events: {
+            'inview .graphic-widget':'inview'
+        },
+
         preRender: function() {
             this.listenTo(Adapt, 'device:changed', this.resizeImage);
         },
 
         postRender: function() {
             this.resizeImage(Adapt.device.screenSize);
-            this.$('.graphic-widget').on('inview', _.bind(function(visible) {
-                if (visible) {
-                    this.setCompletionStatus();
-                }
-            }, this));
+        },
+
+        inview: function(event, visible) {
+            if (visible) {
+                this.setCompletionStatus();
+            }
         },
         
         resizeImage: function(width) {
