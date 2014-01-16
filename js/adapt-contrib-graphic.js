@@ -6,7 +6,7 @@ define(function(require) {
     var Graphic = ComponentView.extend({
 
         events: {
-            'inview .graphic-widget':'inview'
+            'inview':'inview'
         },
 
         preRender: function() {
