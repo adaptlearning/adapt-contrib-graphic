@@ -6,7 +6,9 @@
         "_classes":"",
         "_layout":"left",
         "title":"Here is a graphic object",
+        "displayTitle":"Here is a graphic object",
         "body":"Hi everybody!",
+        "instruction":"",
         "_graphic": {
             "alt": "alt text",
             "title": "title text",
