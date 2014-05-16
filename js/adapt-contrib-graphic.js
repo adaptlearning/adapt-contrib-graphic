@@ -5,21 +5,31 @@ define(function(require) {
 
     var Graphic = ComponentView.extend({
 
-        events: {
-            'inview':'inview'
-        },
-
         preRender: function() {
             this.listenTo(Adapt, 'device:changed', this.resizeImage);
         },
 
         postRender: function() {
             this.resizeImage(Adapt.device.screenSize);
+            this.$('.component-widget').on('inview', _.bind(this.inview, this));
         },
 
-        inview: function(event, visible) {
+        inview: function(event, visible, visiblePartX, visiblePartY) {
             if (visible) {
-                this.setCompletionStatus();
+                if (visiblePartY === 'top') {
+                    this._isVisibleTop = true;
+                } else if (visiblePartY === 'bottom') {
+                    this._isVisibleBottom = true;
+                } else {
+                    this._isVisibleTop = true;
+                    this._isVisibleBottom = true;
+                }
+
+                if (this._isVisibleTop && this._isVisibleBottom) {
+                    this.$('.component-widget').off('inview');
+                    this.setCompletionStatus();
+                }
+                
             }
         },
         
