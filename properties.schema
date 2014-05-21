@@ -4,7 +4,7 @@
   "id": "http://jsonschema.net",
   "$ref": "http://localhost/plugins/content/component/model.schema",
   "properties":{
-    "graphic": {
+    "_graphic": {
       "type":"object",
       "required":true,
       "properties":{
