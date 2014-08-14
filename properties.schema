@@ -10,23 +10,31 @@
       "properties":{
         "alt": {
           "type":"string",
-          "required":false
+          "required":false,
+          "title": "Alternative text"
         },
         "large": {
           "type":"string",
-          "required":true
+          "required":true,
+          "minLength": 1,
+          "title": "Large graphic"
         },
         "medium": {
           "type":"string",
-          "required":true
+          "required":true,
+          "minLength": 1,
+          "title": "Medium graphic"
         },
         "small": {
           "type":"string",
-          "required":true
+          "required":true,
+          "minLength": 1,
+          "title": "Small graphic"
         },
         "title": {
           "type":"string",
-          "required":false
+          "required":false,
+          "title": "Graphic title"
         }
       }
     }
