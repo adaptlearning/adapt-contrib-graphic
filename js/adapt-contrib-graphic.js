@@ -1,3 +1,8 @@
+/*
+ * adapt-contrib-graphic
+ * License - https://github.com/adaptlearning/adapt_framework/blob/master/LICENSE
+ * Maintainers - Brian Quinn <brian@learningpool.com>, Himanshu Rajotia <himanshu.rajotia@credipoint.com>
+ */
 define(function(require) {
 
     var ComponentView = require("coreViews/componentView");
@@ -29,13 +34,16 @@ define(function(require) {
                     this.$('.component-widget').off('inview');
                     this.setCompletionStatus();
                 }
-                
+
             }
         },
-        
+
         resizeImage: function(width) {
-            var src = this.$('.graphic-widget img').attr('data-' + width);
-            this.$('.graphic-widget img').attr('src', src);
+            if (width === 'large') {
+                this.$('.graphic-widget img').attr('src', this.model.get('_graphic').large);
+            } else {
+                this.$('.graphic-widget img').attr('src', this.model.get('_graphic').small);
+            }
 
             this.$('.graphic-widget').imageready(_.bind(function() {
                 this.setReadyStatus();
@@ -44,4 +52,7 @@ define(function(require) {
     });
 
     Adapt.register("graphic", Graphic);
+
+    return Graphic;
+
 });

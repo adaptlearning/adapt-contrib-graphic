@@ -4,12 +4,10 @@ A component for the Adapt Framework that dynamically displays image of different
 
 Three image widths from the _AdaptBuilder.screenSize_ object are handled:
 * small
-* medium
 * large
 
 In order to render images, these three corresponding data attributes in the JSON must be set to the source of the various images.
-* _data-small_ 
-* _data-medium_
+* _data-small_
 * _data-large_
 
 When the viewport size changes, these attributes will be swapped.
@@ -48,7 +46,7 @@ This defines the position of the component in the block. Values can be `full`, `
 
 ####_graphic
 
-The image for this component is defined within this element. The _graphic element should contain only one value for `alt`, `title`, `large`, `medium` and `small`.
+The image for this component is defined within this element. The _graphic element should contain only one value for `alt`, `title`, `large`, and `small`.
 
 ####alt
 
@@ -61,12 +59,6 @@ This setting is for the title attribute on the image.
 ####large
 
 Enter a path to the image for large device width. Paths should be relative to the src folder, e.g.
-
-course/en/images/origami-menu-two.jpg
-
-####medium
-
-Enter a path to the image for medium device width. Paths should be relative to the src folder, e.g.
 
 course/en/images/origami-menu-two.jpg
 

@@ -19,12 +19,6 @@
           "minLength": 1,
           "title": "Large graphic"
         },
-        "medium": {
-          "type":"string",
-          "required":true,
-          "minLength": 1,
-          "title": "Medium graphic"
-        },
         "small": {
           "type":"string",
           "required":true,
