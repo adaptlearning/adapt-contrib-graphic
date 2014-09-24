@@ -39,11 +39,8 @@ define(function(require) {
         },
 
         resizeImage: function(width) {
-            if (width === 'large') {
-                this.$('.graphic-widget img').attr('src', this.model.get('_graphic').large);
-            } else {
-                this.$('.graphic-widget img').attr('src', this.model.get('_graphic').small);
-            }
+            var imageWidth = width === 'medium' ? 'small' : width;
+            this.$('.graphic-widget img').attr('src', this.model.get('_graphic')[imageWidth]);
 
             this.$('.graphic-widget').imageready(_.bind(function() {
                 this.setReadyStatus();
