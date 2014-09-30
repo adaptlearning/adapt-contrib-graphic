@@ -3,16 +3,16 @@
   "version": "0.0.2",
   "homepage": "https://github.com/adaptlearning/adapt-contrib-graphic",
   "authors": [
-    "Brian Quinn <brian@learningpool.com>"
+    "Brian Quinn <brian@learningpool.com>",
+    "Himanshu Rajotia <himanshu.rajotia@credipoint.com>"
   ],
   "displayName" : "Graphic",
   "component" : "graphic",
   "assetFields" : [
     "_graphic.small",
-    "_graphic.medium",
     "_graphic.large"
   ],
-  "description": "Graphic component which dynamically displays small, medium and large images of different resolutions based upon device width",
+  "description": "Graphic component which dynamically displays small and large images of different resolutions based upon device width",
   "main": "/js/adapt-contrib-graphic.js",
   "keywords": [
     "adapt-plugin",
