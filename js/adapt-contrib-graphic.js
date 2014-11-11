@@ -1,22 +1,38 @@
 /*
  * adapt-contrib-graphic
- * License - https://github.com/adaptlearning/adapt_framework/blob/master/LICENSE
+ * License - http://github.com/adaptlearning/adapt_framework/blob/master/LICENSE
  * Maintainers - Brian Quinn <brian@learningpool.com>, Himanshu Rajotia <himanshu.rajotia@credipoint.com>
  */
 define(function(require) {
 
-    var ComponentView = require("coreViews/componentView");
-    var Adapt = require("coreJS/adapt");
+    var ComponentView = require('coreViews/componentView');
+    var Adapt = require('coreJS/adapt');
 
     var Graphic = ComponentView.extend({
 
         preRender: function() {
             this.listenTo(Adapt, 'device:changed', this.resizeImage);
+
+            // Checks to see if the graphic should be reset on revisit
+            this.checkIfResetOnRevisit();
         },
 
         postRender: function() {
             this.resizeImage(Adapt.device.screenSize);
             this.$('.component-widget').on('inview', _.bind(this.inview, this));
+        },
+
+        // Used to check if the graphic should reset on revisit
+        checkIfResetOnRevisit: function() {
+            var isResetOnRevisit = this.model.get('_isResetOnRevisit');
+
+            // If reset is enabled set defaults
+            if (isResetOnRevisit) {
+                this.model.set({
+                    _isEnabled: true,
+                    _isComplete: false
+                });
+            }
         },
 
         inview: function(event, visible, visiblePartX, visiblePartY) {
@@ -48,7 +64,7 @@ define(function(require) {
         }
     });
 
-    Adapt.register("graphic", Graphic);
+    Adapt.register('graphic', Graphic);
 
     return Graphic;
 
