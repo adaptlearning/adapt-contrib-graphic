@@ -4,37 +4,50 @@
   "id": "http://jsonschema.net",
   "$ref": "http://localhost/plugins/content/component/model.schema",
   "properties":{
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "inputType": "Text",
+      "validators": [],
+      "help": "This is the instruction text"
+    },
     "_graphic": {
       "type":"object",
       "required":true,
+      "title": "Graphic",
       "properties":{
         "alt": {
           "type":"string",
           "required":false,
-          "title": "Alternative text"
+          "default": "",
+          "inputType": "Text",
+          "validators": [],
+          "help": "The alternative text for this image"
         },
         "large": {
           "type":"string",
           "required":true,
-          "minLength": 1,
-          "title": "Large graphic"
+          "default": "",
+          "inputType": "Asset",
+          "validators": ["required"],
+          "help": "The large sized image for desktop devices"
         },
         "medium": {
           "type":"string",
           "required":true,
-          "minLength": 1,
-          "title": "Medium graphic"
+          "default": "",
+          "inputType": "Asset",
+          "validators": ["required"],
+          "help": "The medium sized image for tablet devices"
         },
         "small": {
           "type":"string",
           "required":true,
-          "minLength": 1,
-          "title": "Small graphic"
-        },
-        "title": {
-          "type":"string",
-          "required":false,
-          "title": "Graphic title"
+          "default": "",
+          "inputType": "Asset",
+          "validators": ["required"],
+          "help": "The small sized image for mobile devices"
         }
       }
     }
