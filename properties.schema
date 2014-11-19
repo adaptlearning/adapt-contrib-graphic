@@ -29,7 +29,7 @@
           "type":"string",
           "required":true,
           "default": "",
-          "inputType": "Asset",
+          "inputType": "Asset:image",
           "validators": ["required"],
           "help": "The large sized image for desktop devices"
         },
@@ -37,7 +37,7 @@
           "type":"string",
           "required":true,
           "default": "",
-          "inputType": "Asset",
+          "inputType": "Asset:image",
           "validators": ["required"],
           "help": "The medium sized image for tablet devices"
         },
@@ -45,7 +45,7 @@
           "type":"string",
           "required":true,
           "default": "",
-          "inputType": "Asset",
+          "inputType": "Asset:image",
           "validators": ["required"],
           "help": "The small sized image for mobile devices"
         }
