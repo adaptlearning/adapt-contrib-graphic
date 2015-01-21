@@ -7,7 +7,7 @@ define(function(require) {
 
         preRender: function() {
             this.listenTo(Adapt, 'device:changed', this.resizeImage);
-            this.listenTo(this.model, 'change:_isCompelte', this.removeInviewListener);
+            this.listenTo(this.model, 'change:_isComplete', this.removeInviewListener);
         },
 
         postRender: function() {
