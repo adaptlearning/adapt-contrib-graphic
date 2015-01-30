@@ -7,6 +7,7 @@ define(function(require) {
 
         preRender: function() {
             this.listenTo(Adapt, 'device:changed', this.resizeImage);
+            this.listenTo(this.model, 'change:_isComplete', this.removeInviewListener);
         },
 
         postRender: function() {
@@ -26,7 +27,6 @@ define(function(require) {
                 }
 
                 if (this._isVisibleTop && this._isVisibleBottom) {
-                    this.$('.component-widget').off('inview');
                     this.setCompletionStatus();
                 }
                 
@@ -40,6 +40,17 @@ define(function(require) {
             this.$('.graphic-widget').imageready(_.bind(function() {
                 this.setReadyStatus();
             }, this));
+        },
+
+        removeInviewListener: function(model, changeAttribute) {
+            if (changeAttribute) {
+                this.$('.component-widget').off('inview');
+            }
+        },
+
+        remove: function() {
+            this.$('.component-widget').off('inview');
+            Backbone.View.prototype.remove.apply(this, arguments);
         }
     });
 
