@@ -3,4 +3,7 @@
     <div class="graphic-widget component-widget">
         <img src="{{_graphic.src}}" alt="{{_graphic.alt}}" title="{{_graphic.title}}" data-large="{{_graphic.large}}" data-medium="{{_graphic.medium}}" data-small="{{_graphic.small}}"/>
     </div>
+    {{#if _showAttribution}}
+        <div class="graphic-attribution">{{{_graphic.attribution}}}</div>
+    {{/if}}    
 </div>
