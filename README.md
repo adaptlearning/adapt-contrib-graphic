@@ -82,7 +82,9 @@ course/en/images/origami-menu-two.jpg
 
 ####attribution
 
-Text to be displayed as an attribution, by default it is placed below the image, with CSS this can be changed.
+Text to be displayed as an attribution, by default it is placed below the image, with CSS this can be changed, text can contain HTML tags, e.g.
+
+Copyright © 2015 by <b>Lukasz 'Severiaan' Grela</b>
 
 ##Limitations
 
