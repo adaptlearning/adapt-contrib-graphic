@@ -9,7 +9,6 @@
         "displayTitle":"Here is a graphic object",
         "body":"Hi everybody!",
         "instruction":"",
-        "_showAttribution":true,
         "_graphic": {
             "alt": "alt text",
             "large": "http://cdn.lipstiq.com/wp-content/uploads/2013/07/minions-film.jpg",
