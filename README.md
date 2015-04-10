@@ -44,9 +44,13 @@ You can use this setting to add custom classes to your template and LESS file.
 
 This defines the position of the component in the block. Values can be `full`, `left` or `right`. 
 
+####_showAttribution
+
+Boolean value that decides if the attribution text will be used.
+
 ####_graphic
 
-The image for this component is defined within this element. The _graphic element should contain only one value for `alt`, `title`, `large`, and `small`.
+The image for this component is defined within this element. The _graphic element should contain only one value for `alt`, `title`, `large`, `small` and `attribution`.
 
 ####alt
 
@@ -67,6 +71,12 @@ course/en/images/origami-menu-two.jpg
 Enter a path to the image for small device width. Paths should be relative to the src folder, e.g.
 
 course/en/images/origami-menu-two.jpg
+
+####attribution
+
+Text to be displayed as an attribution, by default it is placed below the image, with CSS this can be changed, text can contain HTML tags, e.g.
+
+Copyright © 2015 by &lt;b&gt;Lukasz 'Severiaan' Grela&lt;/b&gt;
 
 ##Limitations
 
