@@ -28,7 +28,7 @@ For content that needs a visual effect we have the graphic component. To optimis
 
 ##Settings overview
  
-An complete example of this components settings can be found in the [example.json](https://github.com/adaptlearning/adapt-contrib-gmcq/blob/master/example.json) file. A description of the core settings can be found at: [Core model attributes](https://github.com/adaptlearning/adapt_framework/wiki/Core-model-attributes)
+An complete example of this components settings can be found in the [example.json](https://github.com/adaptlearning/adapt-contrib-graphic/blob/master/example.json) file. A description of the core settings can be found at: [Core model attributes](https://github.com/adaptlearning/adapt_framework/wiki/Core-model-attributes)
 
 Further settings for this component are:
 
@@ -43,10 +43,6 @@ You can use this setting to add custom classes to your template and LESS file.
 ####_layout
 
 This defines the position of the component in the block. Values can be `full`, `left` or `right`. 
-
-####_showAttribution
-
-Boolean value that decides if the attribution text will be used.
 
 ####_graphic
 
