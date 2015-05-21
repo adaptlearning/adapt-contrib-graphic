@@ -1,6 +1,6 @@
 {
   "name": "adapt-contrib-graphic",
-  "version": "0.0.2",
+  "version": "2.0.0",
   "description": "Graphic component which dynamically displays small, medium and large images of different resolutions based upon device width",
   "main": "",
   "scripts": {
