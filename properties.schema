@@ -4,31 +4,58 @@
   "id": "http://jsonschema.net",
   "$ref": "http://localhost/plugins/content/component/model.schema",
   "properties":{
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "both",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "inputType": "Text",
+      "validators": [],
+      "help": "This is the instruction text"
+    },
     "_graphic": {
       "type":"object",
       "required":true,
+      "title": "Graphic",
       "properties":{
         "alt": {
           "type":"string",
           "required":false,
-          "title": "Alternative text"
+          "default": "",
+          "title": "Alternative Text",
+          "inputType": "Text",
+          "validators": [],
+          "help": "The alternative text for this image"
         },
         "large": {
           "type":"string",
           "required":true,
-          "minLength": 1,
-          "title": "Large graphic"
+          "default": "",
+          "inputType": "Asset:image",
+          "validators": ["required"],
+          "help": "The large sized image for desktop devices"
         },
         "small": {
           "type":"string",
           "required":true,
-          "minLength": 1,
-          "title": "Small graphic"
+          "default": "",
+          "inputType": "Asset:image",
+          "validators": ["required"],
+          "help": "The small sized image for mobile devices"
         },
-        "title": {
+        "attribution": {
           "type":"string",
           "required":false,
-          "title": "Graphic title"
+          "default": "",
+          "inputType": "Text",
+          "validators": [],
+          "help": "Text to be displayed as an attribution"
         }
       }
     }
