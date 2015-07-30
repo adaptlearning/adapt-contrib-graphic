@@ -1,8 +1,3 @@
-/*
- * adapt-contrib-graphic
- * License - http://github.com/adaptlearning/adapt_framework/blob/master/LICENSE
- * Maintainers - Brian Quinn <brian@learningpool.com>, Himanshu Rajotia <himanshu.rajotia@credipoint.com>
- */
 define(function(require) {
 
     var ComponentView = require('coreViews/componentView');
