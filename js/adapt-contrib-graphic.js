@@ -48,7 +48,8 @@ define(function(require) {
 
         resizeImage: function(width) {
             var imageWidth = width === 'medium' ? 'small' : width;
-            this.$('.graphic-widget img').attr('src', this.model.get('_graphic')[imageWidth]);
+            var imageSrc = (this.model.get('_graphic')) ? this.model.get('_graphic')[imageWidth] : '';
+            this.$('.graphic-widget img').attr('src', imageSrc);
 
             this.$('.graphic-widget').imageready(_.bind(function() {
                 this.setReadyStatus();
