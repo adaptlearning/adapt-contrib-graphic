@@ -9,7 +9,8 @@
       "required": true,
       "default": "",
       "inputType": "Text",
-      "validators": []
+      "validators": [],
+      "translatable": true
     }
   },
   "properties":{
@@ -26,7 +27,8 @@
       "default": "",
       "inputType": "Text",
       "validators": [],
-      "help": "This is the instruction text"
+      "help": "This is the instruction text",
+      "translatable": true
     },
     "_graphic": {
       "type":"object",
@@ -40,7 +42,8 @@
           "title": "Alternative Text",
           "inputType": "Text",
           "validators": [],
-          "help": "The alternative text for this image"
+          "help": "The alternative text for this image",
+          "translatable": true
         },
         "large": {
           "type":"string",
@@ -64,7 +67,8 @@
           "default": "",
           "inputType": "Text",
           "validators": [],
-          "help": "Text to be displayed as an attribution"
+          "help": "Text to be displayed as an attribution",
+          "translatable": true
         }
       }
     }
