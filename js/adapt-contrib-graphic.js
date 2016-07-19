@@ -52,7 +52,7 @@ define(function(require) {
           ComponentView.prototype.remove.apply(this, arguments);
         },
 
-        resizeImage: function(width, inPostRender) {
+        resizeImage: function(width, setupInView) {
             var imageWidth = width === 'medium' ? 'small' : width;
             var imageSrc = (this.model.get('_graphic')) ? this.model.get('_graphic')[imageWidth] : '';
             this.$('.graphic-widget img').attr('src', imageSrc);
@@ -60,7 +60,7 @@ define(function(require) {
             this.$('.graphic-widget').imageready(_.bind(function() {
                 this.setReadyStatus();
 
-                if (inPostRender) {
+                if (setupInView) {
                     // Bind 'inview' once the image is ready.
                     this.$('.component-widget').on('inview', _.bind(this.inview, this));
                 }
