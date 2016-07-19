@@ -13,8 +13,7 @@ define(function(require) {
         },
 
         postRender: function() {
-            this.resizeImage(Adapt.device.screenSize);
-            this.$('.component-widget').on('inview', _.bind(this.inview, this));
+            this.resizeImage(Adapt.device.screenSize, true);
         },
 
         // Used to check if the graphic should reset on revisit
@@ -46,13 +45,25 @@ define(function(require) {
             }
         },
 
-        resizeImage: function(width) {
+        remove: function() {
+          // Remove any 'inview' listener attached.
+          this.$('.component-widget').off('inview');
+
+          ComponentView.prototype.remove.apply(this, arguments);
+        },
+
+        resizeImage: function(width, inPostRender) {
             var imageWidth = width === 'medium' ? 'small' : width;
             var imageSrc = (this.model.get('_graphic')) ? this.model.get('_graphic')[imageWidth] : '';
             this.$('.graphic-widget img').attr('src', imageSrc);
 
             this.$('.graphic-widget').imageready(_.bind(function() {
                 this.setReadyStatus();
+
+                if (inPostRender) {
+                    // Bind 'inview' once the image is ready.
+                    this.$('.component-widget').on('inview', _.bind(this.inview, this));
+                }
             }, this));
         }
     });
