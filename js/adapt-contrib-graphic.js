@@ -1,14 +1,13 @@
-define(function(require) {
-
-    var ComponentView = require('coreViews/componentView');
-    var Adapt = require('coreJS/adapt');
+define([
+    'core/js/adapt',
+    'core/js/views/componentView'
+], function(Adapt, ComponentView) {
 
     var Graphic = ComponentView.extend({
 
         preRender: function() {
             this.listenTo(Adapt, 'device:changed', this.resizeImage);
 
-            // Checks to see if the graphic should be reset on revisit
             this.checkIfResetOnRevisit();
         },
 
@@ -16,11 +15,9 @@ define(function(require) {
             this.resizeImage(Adapt.device.screenSize, true);
         },
 
-        // Used to check if the graphic should reset on revisit
         checkIfResetOnRevisit: function() {
             var isResetOnRevisit = this.model.get('_isResetOnRevisit');
 
-            // If reset is enabled set defaults
             if (isResetOnRevisit) {
                 this.model.reset(isResetOnRevisit);
             }
@@ -31,18 +28,16 @@ define(function(require) {
             var imageSrc = (this.model.get('_graphic')) ? this.model.get('_graphic')[imageWidth] : '';
             this.$('.graphic-widget img').attr('src', imageSrc);
 
-            this.$('.graphic-widget').imageready(_.bind(function() {
+            this.$('.graphic-widget').imageready(function() {
                 this.setReadyStatus();
 
                 if (setupInView) {
                     this.setupInviewCompletion('.component-widget');
                 }
-            }, this));
+            }.bind(this));
         }
     });
 
-    Adapt.register('graphic', Graphic);
-
-    return Graphic;
+    return Adapt.register('graphic', Graphic);
 
 });
