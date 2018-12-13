@@ -26,13 +26,13 @@ define([
     resizeImage: function(width, setupInView) {
       var imageWidth = width === 'medium' ? 'small' : width;
       var imageSrc = (this.model.get('_graphic')) ? this.model.get('_graphic')[imageWidth] : '';
-      this.$('.graphic-widget img').attr('src', imageSrc);
+      this.$('.js-graphic-set-image-src').attr('src', imageSrc);
 
-      this.$('.graphic-widget').imageready(function() {
+      this.$('.graphic__widget').imageready(function() {
         this.setReadyStatus();
 
         if (setupInView) {
-          this.setupInviewCompletion('.component-widget');
+          this.setupInviewCompletion('.graphic__widget');
         }
 
       }.bind(this));
