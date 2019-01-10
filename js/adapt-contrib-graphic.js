@@ -1,9 +1,10 @@
 define([
   'core/js/adapt',
-  'core/js/views/componentView'
-], function(Adapt, ComponentView) {
+  'core/js/views/componentView',
+  'core/js/models/componentModel'
+], function(Adapt, ComponentView, ComponentModel) {
 
-  var Graphic = ComponentView.extend({
+  var GraphicView = ComponentView.extend({
 
     preRender: function() {
       this.listenTo(Adapt, 'device:changed', this.resizeImage);
@@ -34,12 +35,13 @@ define([
         if (setupInView) {
           this.setupInviewCompletion('.graphic__widget');
         }
-
       }.bind(this));
     }
-
   });
 
-  return Adapt.register('graphic', Graphic);
+  return Adapt.register('graphic', {
+    model: ComponentModel.extend({}),// create a new class in the inheritance chain so it can be extended per component type if necessary later
+    view: GraphicView
+  });
 
 });
