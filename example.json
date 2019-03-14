@@ -1,18 +1,18 @@
-    {
-        "_id":"c-30",
-        "_parentId":"b-15",
-        "_type":"component",
-        "_component":"graphic",
-        "_classes":"",
-        "_layout":"left",
-        "title":"Here is a graphic object",
-        "displayTitle":"Here is a graphic object",
-        "body":"Hi everybody!",
-        "instruction":"",
-        "_graphic": {
-            "alt": "alt text",
-            "large": "https://github.com/adaptlearning/documentation/raw/master/04_wiki_assets/adapt_framework/adapt-logo_208x200.gif",
-            "small": "http://minionslovebananas.com/images/check-in-minion.jpg",
-            "attribution":"Copyright © 2015"
-        }
-    }
+{
+  "_id":"c-30",
+  "_parentId":"b-15",
+  "_type":"component",
+  "_component":"graphic",
+  "_classes":"",
+  "_layout":"left",
+  "title":"Here is a graphic object",
+  "displayTitle":"Here is a graphic object",
+  "body":"Hi everybody!",
+  "instruction":"",
+  "_graphic": {
+    "alt": "alt text",
+    "large": "https://github.com/adaptlearning/documentation/raw/master/04_wiki_assets/adapt_framework/adapt-logo_208x200.gif",
+    "small": "http://minionslovebananas.com/images/check-in-minion.jpg",
+    "attribution":"Copyright © 2015"
+  }
+}
