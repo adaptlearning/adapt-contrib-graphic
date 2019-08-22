@@ -10,9 +10,12 @@
         "body": "Hi everybody!",
         "instruction": "",
         "_graphic": {
-            "alt": "alt text",
+            "alt": "Placeholder graphic",
             "large": "https://github.com/adaptlearning/documentation/raw/master/04_wiki_assets/adapt_framework/adapt-logo_208x200.gif",
             "small": "http://minionslovebananas.com/images/check-in-minion.jpg",
-            "attribution":"Copyright © 2015"
+            "attribution": "Copyright © 2019"
+        },
+        "_pageLevelProgress": {
+            "_isEnabled": true
         }
     }
