@@ -1,5 +1,5 @@
 {
-  "type":"object",
+  "type": "object",
   "$schema": "http://json-schema.org/draft-04/schema",
   "id": "http://jsonschema.net",
   "$ref": "http://localhost/plugins/content/component/model.schema",
@@ -13,7 +13,7 @@
       "translatable": true
     }
   },
-  "properties":{
+  "properties": {
     "_supportedLayout": {
       "type": "string",
       "required": true,
@@ -31,13 +31,13 @@
       "translatable": true
     },
     "_graphic": {
-      "type":"object",
-      "required":true,
+      "type": "object",
+      "required": true,
       "title": "Graphic",
-      "properties":{
+      "properties": {
         "alt": {
-          "type":"string",
-          "required":false,
+          "type": "string",
+          "required": false,
           "default": "",
           "title": "Alternative Text",
           "inputType": "Text",
@@ -46,24 +46,24 @@
           "translatable": true
         },
         "large": {
-          "type":"string",
-          "required":true,
+          "type": "string",
+          "required": true,
           "default": "",
           "inputType": "Asset:image",
           "validators": ["required"],
           "help": "The large sized image for desktop devices"
         },
         "small": {
-          "type":"string",
-          "required":true,
+          "type": "string",
+          "required": true,
           "default": "",
           "inputType": "Asset:image",
           "validators": ["required"],
           "help": "The small sized image for mobile devices"
         },
         "attribution": {
-          "type":"string",
-          "required":false,
+          "type": "string",
+          "required": false,
           "default": "",
           "inputType": "Text",
           "validators": [],
