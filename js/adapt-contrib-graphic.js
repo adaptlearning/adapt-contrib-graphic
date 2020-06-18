@@ -4,7 +4,7 @@ define([
   'core/js/models/componentModel'
 ], function(Adapt, ComponentView, ComponentModel) {
 
-  class GraphicView extends ComponentView{
+  class GraphicView extends ComponentView {
 
     preRender() {
       this.listenTo(Adapt, 'device:changed', this.resizeImage);
