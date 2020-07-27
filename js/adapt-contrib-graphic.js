@@ -4,40 +4,42 @@ define([
   'core/js/models/componentModel'
 ], function(Adapt, ComponentView, ComponentModel) {
 
-  var GraphicView = ComponentView.extend({
+  class GraphicView extends ComponentView {
 
-    preRender: function() {
+    preRender() {
       this.listenTo(Adapt, 'device:changed', this.resizeImage);
 
       this.checkIfResetOnRevisit();
-    },
+    }
 
-    postRender: function() {
+    postRender() {
       this.resizeImage(Adapt.device.screenSize, true);
-    },
+    }
 
-    checkIfResetOnRevisit: function() {
-      var isResetOnRevisit = this.model.get('_isResetOnRevisit');
+    checkIfResetOnRevisit() {
+      const isResetOnRevisit = this.model.get('_isResetOnRevisit');
 
       if (isResetOnRevisit) {
         this.model.reset(isResetOnRevisit);
       }
-    },
+    }
 
-    resizeImage: function(width, setupInView) {
-      var imageWidth = width === 'medium' ? 'small' : width;
-      var imageSrc = (this.model.get('_graphic')) ? this.model.get('_graphic')[imageWidth] : '';
+    resizeImage(width, setupInView) {
+      const imageWidth = width === 'medium' ? 'small' : width;
+      const imageSrc = (this.model.get('_graphic')) ? this.model.get('_graphic')[imageWidth] : '';
       this.$('.js-graphic-set-image-src').attr('src', imageSrc);
 
-      this.$('.graphic__widget').imageready(function() {
+      this.$('.graphic__widget').imageready(() => {
         this.setReadyStatus();
 
         if (setupInView) {
           this.setupInviewCompletion('.graphic__widget');
         }
-      }.bind(this));
+      });
     }
-  });
+  }
+
+  GraphicView.template = 'graphic';
 
   return Adapt.register('graphic', {
     model: ComponentModel.extend({}),// create a new class in the inheritance chain so it can be extended per component type if necessary later
