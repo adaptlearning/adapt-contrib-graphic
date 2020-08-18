@@ -1,8 +1,12 @@
+import Adapt from 'core/js/adapt';
 import { classes, templates, html } from 'core/js/reactHelpers';
 
 export default function(model, view) {
   const data = model.toJSON();
   const { _graphic } = data;
+
+  const screenSize = Adapt.device.screenSize;
+  const imageWidth = (screenSize === 'medium') ? 'small' : screenSize;
 
   return (
     <div className='component__inner graphic__inner'>
@@ -18,11 +22,9 @@ export default function(model, view) {
 
           <img
             className='graphic__image js-graphic-set-image-src'
-            src={_graphic.src}
-            data-large={_graphic.large}
-            data-small={_graphic.small}
+            src={_graphic[imageWidth] || _graphic.src}
             aria-hidden={_graphic.alt ? null : 'true'}
-            aria-label={_graphic.alt ? _graphic.alt : null}
+            aria-label={_graphic.alt ? Adapt.a11y.normalize(_graphic.alt) : null}
           />
 
           {_graphic.attribution &&
