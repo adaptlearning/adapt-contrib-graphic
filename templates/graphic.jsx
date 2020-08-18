@@ -40,5 +40,5 @@ export default function(model, view) {
       </div>
 
     </div>
-  )
+  );
 }
