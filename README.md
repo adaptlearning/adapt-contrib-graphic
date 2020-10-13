@@ -43,7 +43,7 @@ guide the learner’s interaction with the component.
 
 **\_graphic** (object): The image that constitutes the component. It contains values for **alt**, **large**, and **small**.
 
->**alt** (string): This text becomes the image’s `alt` attribute. 
+>**alt** (string): The alternative text for this image. 
 
 >**large** (string): File name (including path) of the image used with large device width. Path should be relative to the *src* folder (e.g., *course/en/images/origami-menu-two.jpg*).  
 
@@ -52,9 +52,13 @@ guide the learner’s interaction with the component.
 >**attribution** (string): Optional text to be displayed as an [attribution](https://wiki.creativecommons.org/Best_practices_for_attribution). By default it is displayed below the image. Adjust positioning by modifying CSS. Text can contain HTML tags, e.g., `Copyright © 2015 by <b>Lukasz 'Severiaan' Grela</b>`  
 
 ## Accessibility
-+ Remember to include an **alt** attribute for all your images. Screen readers will read aloud alt text content, so leave the alt text empty (`"alt": ""`) if the image does not contribute significant course content.  
-+ If the alt text is left empty, the image will *not* be included in the tab order. If the component is configured to display [title or body text]((https://github.com/adaptlearning/adapt_framework/wiki/Core-model-attributes)), these will remain keyboard accessible.  
-+ If the alt text is assigned a value, but the component is not being tracked for course completion, assign the class `"no-state"` to **\_classes**. Adapt's accessibility mode reports to the learner the 'state' of the component, whether it is complete or incomplete. It is not common practice to require interaction with (or 'completion' of) an image for course completion. Indeed, a screen reader needlessly announcing the state of an image may be distracting for the learner. Assigning the built-in class `"no-state"` prevents this.  
++ Alternative text, the text equivalent for an image. It is read by screen readers allowing the content of the image to be accessible to those with visual or certain cognitive disabilities. Leave the alt text empty (`"alt": ""`) if the image does not contribute significant course content.  
++ If the alt text is left empty, the image will *not* be included in the tab order. If the component is configured to display [title or body text]((https://github.com/adaptlearning/adapt_framework/wiki/Core-model-attributes)), these will remain keyboard accessible.
+
+### Providing good alt text
++ Be specific and succinct. Describe what you see. A few words will usually be enough, but charts and diagrams will likely require more thought. Bear in mind that screen readers may cut-off alt text at around 125 characters.
++ *Don’t* be redundant. If an image doesn't add value and is just there for design purposes, or the context is already covered in the supporting text, leave the alt text empty.
++ *Don’t* use phrases “image of…” or “graphic of…” etc. It's already assumed your alt text is referring to an image, so there's no need to specify it.
 
 ## Limitations
 
