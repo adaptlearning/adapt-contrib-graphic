@@ -42,7 +42,7 @@
           "title": "Alternative Text",
           "inputType": "Text",
           "validators": [],
-          "help": "The alternative text for this image. Assign alt text to images that convey course content only.",
+          "help": "A description of the image; required when it has meaning that must be conveyed to the learner. For 'decorative' images, leave this blank.",
           "translatable": true
         },
         "large": {
