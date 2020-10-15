@@ -43,7 +43,7 @@ guide the learner’s interaction with the component.
 
 **\_graphic** (object): The image that constitutes the component. It contains values for **alt**, **large**, and **small**.
 
->**alt** (string): The alternative text for this image. 
+>**alt** (string): The alternative text for this image. Assign [alt text](https://github.com/adaptlearning/adapt_framework/wiki/Providing-good-alt-text) to images that convey course content only.
 
 >**large** (string): File name (including path) of the image used with large device width. Path should be relative to the *src* folder (e.g., *course/en/images/origami-menu-two.jpg*).  
 
@@ -51,14 +51,8 @@ guide the learner’s interaction with the component.
 
 >**attribution** (string): Optional text to be displayed as an [attribution](https://wiki.creativecommons.org/Best_practices_for_attribution). By default it is displayed below the image. Adjust positioning by modifying CSS. Text can contain HTML tags, e.g., `Copyright © 2015 by <b>Lukasz 'Severiaan' Grela</b>`  
 
-## Accessibility
-+ Alternative text, the text equivalent for an image. It is read by screen readers allowing the content of the image to be accessible to those with visual or certain cognitive disabilities. Leave the alt text empty (`"alt": ""`) if the image does not contribute significant course content.  
+## Accessibility  
 + If the alt text is left empty, the image will *not* be included in the tab order. If the component is configured to display [title or body text]((https://github.com/adaptlearning/adapt_framework/wiki/Core-model-attributes)), these will remain keyboard accessible.
-
-### Providing good alt text
-+ Be specific and succinct. Describe what you see. A few words will usually be enough, but charts and diagrams will likely require more thought. Bear in mind that screen readers may cut off alt text at around 125 characters.
-+ *Don’t* be redundant. If an image doesn't add value and is just there for design purposes, or the context is already covered in the supporting text, leave the alt text empty.
-+ *Don’t* use phrases “image of…” or “graphic of…” etc. It's already assumed your alt text is referring to an image, so there's no need to specify it.
 
 ## Limitations
 
