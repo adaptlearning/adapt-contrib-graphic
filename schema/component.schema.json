@@ -24,7 +24,6 @@
         "instruction": {
           "type": "string",
           "title": "Instruction",
-          "description": "This is the instruction text",
           "default": "",
           "_adapt": {
             "translatable": true
@@ -41,8 +40,8 @@
           "properties": {
             "alt": {
               "type": "string",
-              "title": "Alternative Text",
-              "description": "A description of the image; required when it has meaning that must be conveyed to the learner. For 'decorative' images, leave this blank.",
+              "title": "Alternative text",
+              "description": "A description of the image; required when it has meaning that must be conveyed to the learner. For 'decorative' images, leave this blank",
               "default": "",
               "_adapt": {
                 "translatable": true
