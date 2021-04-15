@@ -49,9 +49,9 @@
             },
             "large": {
               "type": "string",
+              "isObjectId": true,
               "title": "Large",
               "description": "The large sized image for desktop devices",
-              "default": "",
               "_backboneForms": {
                 "type": "Asset",
                 "media": "image"
@@ -59,9 +59,9 @@
             },
             "small": {
               "type": "string",
+              "isObjectId": true,
               "title": "Small",
               "description": "The small sized image for mobile devices",
-              "default": "",
               "_backboneForms": {
                 "type": "Asset",
                 "media": "image"
