@@ -6,6 +6,12 @@ define([
 
   class GraphicView extends ComponentView {
 
+    events() {
+      return {
+        'click .js-graphic-link': 'onClick'
+      };
+    }
+
     preRender() {
       this.listenTo(Adapt, 'device:changed', this.resizeImage);
 
@@ -36,6 +42,26 @@ define([
           this.setupInviewCompletion('.graphic__widget');
         }
       });
+    }
+
+    onClick(event) {
+      if (event) event.preventDefault();
+
+      var item = this.model.get('_graphic');
+      var url = item._url;
+      var target = item._target || "_blank";
+
+      switch (target) {
+        case "_self":
+          if (url.substr(0,1) === "#") {
+            Backbone.history.navigate(url, { trigger: true });
+          } else {
+            window.location.href = url;
+          }
+          break;
+        default:
+          window.open(url, target);
+      }
     }
   }
 

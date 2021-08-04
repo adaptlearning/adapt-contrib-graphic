@@ -6,7 +6,15 @@
 
     <div class="graphic__image-container{{#if _graphic.attribution}} has-attribution{{/if}}">
 
+      {{#if _graphic._url}}
+      <a href="{{_graphic._url}}" class="graphic__link js-graphic-link" role="link">
+      {{/if}}
+
       <img class="graphic__image js-graphic-set-image-src" src="{{_graphic.src}}" data-large="{{_graphic.large}}" data-small="{{_graphic.small}}" {{#if _graphic.alt}}aria-label="{{{compile_a11y_normalize _graphic.alt}}}"{{else}}aria-hidden="true"{{/if}}>
+
+      {{#if _graphic._url}}
+      </a>
+      {{/if}}
 
       {{#if _graphic.attribution}}
       <div class="component__attribution graphic__attribution">

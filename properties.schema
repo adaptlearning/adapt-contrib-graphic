@@ -69,6 +69,28 @@
           "validators": [],
           "help": "Text to be displayed as an attribution",
           "translatable": true
+        },
+        "_url": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "Title": "URL",
+          "inputType": "Text",
+          "validators": [],
+          "help": "When the graphic is clicked this is the url it will follow."
+        },
+        "_target": {
+          "type": "string",
+          "required": false,
+          "enum": ["_blank", "_self", "_parent", "_top"],
+          "default": "",
+          "title": "Target attribute",
+          "inputType": {
+            "type": "Select",
+            "options": ["_blank", "_self", "_parent", "_top"]
+          },
+          "validators": [],
+          "help": "Target attribute for the link. If no value is set, default value is '_blank'"
         }
       }
     }
