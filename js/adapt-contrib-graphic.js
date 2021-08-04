@@ -47,17 +47,17 @@ define([
     onClick(event) {
       if (event) event.preventDefault();
 
-      var item = this.model.get('_graphic');
-      var url = item._url;
-      var target = item._target || "_blank";
+      const item = this.model.get('_graphic');
+      const url = item._url;
+      const target = item._target || '_blank';
 
       switch (target) {
-        case "_self":
-          if (url.substr(0,1) === "#") {
+        case '_self':
+          if (url.substr(0, 1) === '#') {
             Backbone.history.navigate(url, { trigger: true });
-          } else {
-            window.location.href = url;
+            return;
           }
+          window.location.href = url;
           break;
         default:
           window.open(url, target);
@@ -68,7 +68,7 @@ define([
   GraphicView.template = 'graphic';
 
   return Adapt.register('graphic', {
-    model: ComponentModel.extend({}),// create a new class in the inheritance chain so it can be extended per component type if necessary later
+    model: ComponentModel.extend({}), // create a new class in the inheritance chain so it can be extended per component type if necessary later
     view: GraphicView
   });
 
