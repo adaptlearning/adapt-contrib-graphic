@@ -1,0 +1,84 @@
+{
+  "$anchor": "graphic-component",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$merge": {
+    "source": {
+      "$ref": "component"
+    },
+    "with": {
+      "properties": {
+        "_supportedLayout": {
+          "type": "string",
+          "title": "Supported layout",
+          "default": "both",
+          "enum": [
+            "full-width",
+            "half-width",
+            "both"
+          ],
+          "_adapt": {
+            "editorOnly": true
+          }
+        },
+        "instruction": {
+          "type": "string",
+          "title": "Instruction",
+          "default": "",
+          "_adapt": {
+            "translatable": true
+          }
+        },
+        "_graphic": {
+          "type": "object",
+          "title": "Graphic",
+          "default": {},
+          "required": [
+            "large",
+            "small"
+          ],
+          "properties": {
+            "alt": {
+              "type": "string",
+              "title": "Alternative text",
+              "description": "A description of the image; required when it has meaning that must be conveyed to the learner. For 'decorative' images, leave this blank",
+              "default": "",
+              "_adapt": {
+                "translatable": true
+              }
+            },
+            "large": {
+              "type": "string",
+              "isObjectId": true,
+              "title": "Large",
+              "description": "The large sized image for desktop devices",
+              "_backboneForms": {
+                "type": "Asset",
+                "media": "image"
+              }
+            },
+            "small": {
+              "type": "string",
+              "isObjectId": true,
+              "title": "Small",
+              "description": "The small sized image for mobile devices",
+              "_backboneForms": {
+                "type": "Asset",
+                "media": "image"
+              }
+            },
+            "attribution": {
+              "type": "string",
+              "title": "Attribution",
+              "description": "Text to be displayed as an attribution",
+              "default": "",
+              "_adapt": {
+                "translatable": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

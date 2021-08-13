@@ -5,6 +5,7 @@
   "homepage": "https://github.com/adaptlearning/adapt-contrib-graphic",
   "issues": "https://github.com/adaptlearning/adapt_framework/issues/new",
   "component" : "graphic",
+  "targetAttribute": "_graphic",
   "displayName" : "Graphic",
   "description": "Graphic component which dynamically displays small and large images of different resolutions based upon device width",
   "main": "/js/adapt-contrib-graphic.js",
