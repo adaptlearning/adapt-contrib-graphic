@@ -1,7 +1,7 @@
 {
   "name": "adapt-contrib-graphic",
-  "version": "4.3.0",
-  "framework": ">=5.5",
+  "version": "5.0.0",
+  "framework": ">=5.14.0",
   "homepage": "https://github.com/adaptlearning/adapt-contrib-graphic",
   "bugs": "https://github.com/adaptlearning/adapt-contrib-graphic/issues",
   "component" : "graphic",
