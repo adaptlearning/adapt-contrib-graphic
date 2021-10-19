@@ -77,7 +77,7 @@
           "Title": "URL",
           "inputType": "Text",
           "validators": [],
-          "help": "When the graphic is clicked this is the url it will follow."
+          "help": "When the graphic is selected this is the url it will follow."
         },
         "_target": {
           "type": "string",
@@ -90,7 +90,7 @@
             "options": ["_blank", "_self", "_parent", "_top"]
           },
           "validators": [],
-          "help": "Target attribute for the link. If no value is set, default value is '_blank'"
+          "help": "This targets where to open the link. Acceptable values are '_blank' (opens the linked document in a new window or tab), '_parent' (opens the linked document in the parent frame), '_top' (opens the linked document in the full body of the window) or '_self' (opens the linked document in the same frame as it was selected. If no value is set, the default is '_blank'."
         }
       }
     }
