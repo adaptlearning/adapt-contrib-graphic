@@ -53,7 +53,7 @@ guide the learner’s interaction with the component.
 
 >**\_url** (string): When the graphic is selected this is the url it will follow. Can be an Adapt reference, `#/id/co-10`, external, `https://www.adaptlearning.org/`, or file `course/en/images/vanilla-swatch.jpg`. If using an Adapt reference `_target` must be set to `_self`.
 
->**\_target** (string): The target attribute specifies where to open the link or linked document. Acceptable values are `_blank` (opens the linked document in a new window or tab), `_parent` (opens the linked document in the parent frame), `_top` (opens the linked document in the full body of the window) or `_self` (opens the linked document in the same frame as it was selected. If no value is set, the default is `_blank`.
+>**\_target** (string): The target attribute specifies where to open the link or linked document. Acceptable values are `_blank` opens the linked document in a new window or tab, `_parent` opens the linked document in the parent frame, `_top` opens the linked document in the full body of the window or `_self` opens the linked document in the same frame as it was selected. If no value is set, the default is `_blank`.
 
 ### Notes
 If you don't need this component to display a different image for large/small screen sizes, you can use **src** (instead of **large** and **small**) to specify an image that will be displayed for all screen sizes.  

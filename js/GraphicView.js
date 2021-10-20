@@ -19,20 +19,13 @@ class GraphicView extends ComponentView {
     if (event) event.preventDefault();
 
     const item = this.model.get('_graphic');
-    const url = item._url;
-    const target = item._target || '_blank';
+    const { _url: url, _target: target = '_blank' } = item;
 
-    switch (target) {
-      case '_self':
-        if (url.substr(0, 1) === '#') {
-          Backbone.history.navigate(url, { trigger: true });
-          return;
-        }
-        window.location.href = url;
-        break;
-      default:
-        window.open(url, target);
-    }
+    const isNewWindow = (target !== '_self');
+    if (isNewWindow) return window.open(url, target);
+    const isRouterNavigation = (url.substr(0, 1) === '#');
+    if (isRouterNavigation) return Backbone.history.navigate(url, { trigger: true });
+    window.location.href = url;
   }
 
 }
