@@ -45,6 +45,16 @@
           "help": "A description of the image; required when it has meaning that must be conveyed to the learner. For 'decorative' images, leave this blank.",
           "translatable": true
         },
+        "longdescription": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Long image description",
+          "inputType": "Text",
+          "validators": [],
+          "help": "A long description of the image. This text appear below the image.",
+          "translatable": true
+        },
         "large": {
           "type": "string",
           "required": true,
@@ -93,6 +103,23 @@
           "help": "This targets where to open the link. Acceptable values are '_blank' (opens the linked document in a new window or tab), '_parent' (opens the linked document in the parent frame), '_top' (opens the linked document in the full body of the window) or '_self' (opens the linked document in the same frame as it was selected. If no value is set, the default is '_blank'."
         }
       }
+    },
+    "_isScrollable": {
+      "type": "boolean",
+      "required": true,
+      "default": false,
+      "title": "Enable horizontal scrolling",
+      "inputType": "Checkbox",
+      "validators": []
+    }
+    "_defaultScrollPercent": {
+      "type": "number",
+      "required": false,
+      "default": 0,
+      "title": "Scroll percent",
+      "inputType": "Number",
+      "validators": ["required", "number"],
+      "help": "0 is left most, 50 is in the middle, 100 is right most."
     }
   }
 }

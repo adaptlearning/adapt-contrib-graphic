@@ -45,6 +45,8 @@ guide the learner’s interaction with the component.
 
 >**alt** (string): The alternative text for this image or link. For image only, assign [alt text](https://github.com/adaptlearning/adapt_framework/wiki/Providing-good-alt-text) for images that convey course content only. For links, the alt text should convey the navigation or resource.
 
+>**longdescription** (string): A long description of the image. This text appear below the image.
+
 >**large** (string): File name (including path) of the image used with large device width. Path should be relative to the *src* folder (e.g., *course/en/images/origami-menu-two.jpg*).  
 
 >**small** (string): File name (including path) of the image used with small device width. Path should be relative to the *src* folder (e.g., *course/en/images/origami-menu-two.jpg*).  
@@ -54,6 +56,10 @@ guide the learner’s interaction with the component.
 >**\_url** (string): When the graphic is selected this is the url it will follow. Can be an Adapt reference, `#/id/co-10`, external, `https://www.adaptlearning.org/`, or file `course/en/images/vanilla-swatch.jpg`. If using an Adapt reference `_target` must be set to `_self`.
 
 >**\_target** (string): The target attribute specifies where to open the link or linked document. Acceptable values are `_blank` opens the linked document in a new window or tab, `_parent` opens the linked document in the parent frame, `_top` opens the linked document in the full body of the window or `_self` opens the linked document in the same frame as it was selected. If no value is set, the default is `_blank`.
+
+**_isScrollable** (boolean): Scrolls horizontally for extra wide images.
+
+**_defaultScrollPercent** (number): Starting scroll position. `0` is to the left, `50` is in the center, `100` is to the right.
 
 ### Notes
 If you don't need this component to display a different image for large/small screen sizes, you can use **src** (instead of **large** and **small**) to specify an image that will be displayed for all screen sizes.  
