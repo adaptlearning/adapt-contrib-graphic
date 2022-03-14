@@ -111,7 +111,7 @@
       "title": "Enable horizontal scrolling",
       "inputType": "Checkbox",
       "validators": []
-    }
+    },
     "_defaultScrollPercent": {
       "type": "number",
       "required": false,
