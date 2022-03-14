@@ -25,6 +25,7 @@ class GraphicView extends ComponentView {
   }
 
   setupScrollable() {
+    if (!this.model.get('_isScrollable')) return;
     this.onScroll = _.debounce(this.onScroll.bind(this), 17);
     const $scrollbar = this.$('.js-graphic-scrollbar');
     const $scrollContainer = this.$(`#${$scrollbar.attr('aria-controls')}`);
