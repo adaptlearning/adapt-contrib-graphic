@@ -1,8 +1,8 @@
-import Adapt from 'core/js/adapt';
+import components from 'core/js/components';
 import GraphicView from './GraphicView';
 import GraphicModel from './GraphicModel';
 
-export default Adapt.register('graphic', {
+export default components.register('graphic', {
   model: GraphicModel,
   view: GraphicView
 });
