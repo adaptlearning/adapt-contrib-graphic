@@ -11,7 +11,8 @@ export default function Graphic(props) {
     _id,
     _isScrollable,
     _scrollPercent,
-    _graphic
+    _graphic,
+    _globals
   } = props;
 
   const scrollableProperties = _isScrollable
@@ -23,7 +24,7 @@ export default function Graphic(props) {
       'aria-valuemax': '100',
       'aria-valuemin': '0',
       'aria-valuenow': _scrollPercent,
-      'aria-label': `Use the scrollbar to pan the image left and right. ${_graphic.alt || ''}`,
+      'aria-label': Handlebars.compile(_globals._components._graphic.scrollAriaLabel)(props),
       'aria-describedby': _graphic.longdescription ? `graphic__longdescription__${_id}` : undefined,
       tabIndex: '0'
     }

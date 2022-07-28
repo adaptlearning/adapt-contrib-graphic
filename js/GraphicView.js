@@ -53,7 +53,7 @@ class GraphicView extends ComponentView {
     const step = (clientWidth * 0.1);
     let left = $scrollContainer.scrollLeft();
     const calculatedScrollPercent = parseInt(left / scrollableWidth * 100);
-    const definedScrollPercent = this.model.get('_scrollPercent');
+    const definedScrollPercent = this.model.get('_scrollPercent') ?? 0;
     if (definedScrollPercent !== calculatedScrollPercent) {
       // set inital position
       left = definedScrollPercent / 100 * scrollableWidth;
