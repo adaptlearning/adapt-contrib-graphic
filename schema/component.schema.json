@@ -100,7 +100,8 @@
                 "_self",
                 "_parent",
                 "_top"],
-              "default": ""
+              "default": "_blank",
+              "_backboneForms": "Select"
             }
           }
         },
