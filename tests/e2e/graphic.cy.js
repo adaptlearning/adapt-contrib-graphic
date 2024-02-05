@@ -6,26 +6,38 @@ describe('Graphic', function () {
 
   it('should display the graphic component', function () {
     const graphicComponents = this.data.components.filter((component) => component._component === 'graphic')
+    graphicComponents.forEach((graphicComponent) => {
+      let waited = false
+      cy.visit(`/#/preview/${graphicComponent._id}`);
+      const bodyWithoutHtml = graphicComponent.body.replace(/<[^>]*>/g, '');
 
-    this.data.contentObjects.filter((page) => page._classes !== 'assessment').forEach((page) => {
-      cy.visit(`/#/id/${page._id}`);
-      const articlesOnPage = this.data.articles.filter((article) => article._parentId === page._id).map(article => article._id)
-      const blocksOnPage = this.data.blocks.filter((block) => articlesOnPage.includes(block._parentId)).map(blocks => blocks._id)
-      const componentsOnPage = graphicComponents.filter((component) => blocksOnPage.includes(component._parentId))
+      function waitOneSecond() {
+        // return a promise that resolves after 1 second
+        return new Cypress.Promise((resolve, reject) => {
+          setTimeout(() => {
+            // set waited to true
+            waited = true
+    
+            // resolve with 'foo' string
+            resolve()
+          }, 1000)
+        })
+      }
 
-      componentsOnPage.forEach(({ body, displayTitle, _graphic }) => {
-        const bodyWithoutHtml = body.replace(/<[^>]*>/g, '');
-
-        cy.testContainsOrNotExists('.graphic__title', displayTitle)
-        cy.testContainsOrNotExists('.graphic__body', bodyWithoutHtml)
-        if(_graphic.src) {
-          cy.get('.graphic__image').should('have.attr', 'src', _graphic.src)
-        } else if(_graphic.large) {
-          cy.get('.graphic__image').should('have.attr', 'src', _graphic.large)
-        }
+      cy.wrap(null).then(() => {
+        // return a promise to cy.then() that
+        // is awaited until it resolves
+        return waitOneSecond().then(() => {
+          cy.testContainsOrNotExists('.graphic__title', graphicComponent.displayTitle)
+          cy.testContainsOrNotExists('.graphic__body', bodyWithoutHtml)
+          if(graphicComponent._graphic.large) {
+            cy.get('.graphic__image').should('have.attr', 'src', graphicComponent._graphic.large)
+          } else if(graphicComponent._graphic.src) {
+            cy.get('.graphic__image').should('have.attr', 'src', graphicComponent._graphic.src)
+          }
+          expect(waited).to.be.true
+        })
       })
-
-      cy.visit('/');
     });
   });
 });
