@@ -1,7 +1,6 @@
 describe('Graphic', function () {
   beforeEach(function () {
     cy.getData()
-    cy.visit('/');
   });
 
   it('should display the graphic component', function () {
