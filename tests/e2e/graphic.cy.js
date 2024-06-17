@@ -5,9 +5,9 @@ describe('Graphic', function () {
 
   it('should display the graphic component', function () {
     const graphicComponents = this.data.components.filter(component => component._component === 'graphic');
+    const stripHtml = cy.helpers.stripHtml;
     graphicComponents.forEach(graphicComponent => {
       cy.visit(`/#/preview/${graphicComponent._id}`);
-      const stripHtml = cy.helpers.stripHtml;
 
       cy.testContainsOrNotExists('.graphic__body', stripHtml(graphicComponent.body));
       cy.testContainsOrNotExists('.graphic__title', stripHtml(graphicComponent.displayTitle));
