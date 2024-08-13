@@ -92,7 +92,7 @@
           "type": "string",
           "required": false,
           "default": "",
-          "Title": "URL",
+          "title": "URL",
           "inputType": "Text",
           "validators": [],
           "help": "When the graphic is selected this is the url it will follow."
