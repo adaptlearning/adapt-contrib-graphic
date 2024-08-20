@@ -100,12 +100,12 @@
         "_target": {
           "type": "string",
           "required": false,
-          "enum": ["_blank", "_self", "_parent", "_top"],
+          "enum": ["", "_blank", "_self", "_parent", "_top"],
           "default": "_blank",
           "title": "Target attribute",
           "inputType": {
             "type": "Select",
-            "options": ["_blank", "_self", "_parent", "_top"]
+            "options": ["", "_blank", "_self", "_parent", "_top"]
           },
           "validators": [],
           "help": "This targets where to open the link. Acceptable values are '_blank' (opens the linked document in a new window or tab), '_parent' (opens the linked document in the parent frame), '_top' (opens the linked document in the full body of the window) or '_self' (opens the linked document in the same frame as it was selected. If no value is set, the default is '_blank'."
