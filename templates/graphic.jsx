@@ -38,7 +38,7 @@ export default function Graphic(props) {
 
         <LinkWrapper
           href = {_graphic._url}
-          target = {_graphic._target}
+          target = {_graphic._target || null}
           className = 'graphic__link js-graphic-link'
           role = 'link'
         >
