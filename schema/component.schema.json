@@ -58,7 +58,6 @@
             },
             "large": {
               "type": "string",
-              "isObjectId": true,
               "title": "Large",
               "description": "The large sized image for desktop devices",
               "_backboneForms": {
@@ -68,7 +67,6 @@
             },
             "small": {
               "type": "string",
-              "isObjectId": true,
               "title": "Small",
               "description": "The small sized image for mobile devices",
               "_backboneForms": {
@@ -96,7 +94,7 @@
               "title": "Target attribute",
               "description": "This targets where to open the link. Acceptable values are '_blank' (opens the linked document in a new window or tab), '_parent' (opens the linked document in the parent frame), '_top' (opens the linked document in the full body of the window) or '_self' (opens the linked document in the same frame as it was selected. If no value is set, the default is '_blank'.",
               "enum": [
-                "", 
+                "",
                 "_blank",
                 "_self",
                 "_parent",
