@@ -3,7 +3,7 @@ import { describe, whereContent, whereFromPlugin, mutateContent, checkContent, u
 let graphics;
 
 describe('Graphic - v1.1.0. to v2.0.0', async () => {
-  whereFromPlugin('Graphic - from v1.1.0', { name: 'adapt-contrib-narrative', version: '<2.0.0' });
+  whereFromPlugin('Graphic - from v1.1.0', { name: 'adapt-contrib-graphic', version: '<2.0.0' });
   whereContent('Graphic - where graphic', async content => {
     graphics = content.filter(({ _component }) => _component === 'graphic');
     if (graphics) return true;
