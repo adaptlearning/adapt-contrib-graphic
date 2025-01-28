@@ -1,12 +1,24 @@
 import { describe, whereContent, whereFromPlugin, mutateContent, checkContent, updatePlugin } from 'adapt-migrations';
 
-let graphics;
-
 describe('Graphic - v5.1.0 to v6.2.0', async () => {
+  let graphics, course, courseGraphicGlobals;
   whereFromPlugin('Graphic - from v5.1.0', { name: 'adapt-contrib-graphic', version: '<6.2.0' });
   whereContent('Graphic - where graphic', async content => {
     graphics = content.filter(({ _component }) => _component === 'graphic');
     if (graphics) return true;
+  });
+  mutateContent('Graphic - add globals if missing', async (content) => {
+    course = content.find(({ _type }) => _type === 'course');
+    if (course?._globals?._components?._graphic) {
+      courseGraphicGlobals = course._globals._components._graphic;
+      return true;
+    }
+    courseGraphicGlobals = course._globals._components._graphic = {};
+    return true;
+  });
+  mutateContent('Graphic - add scrollAriaLabel attribute', async content => {
+    courseGraphicGlobals.scrollAriaLabel = 'Use the scrollbar to pan the image left and right. {{#if _graphic.alt}}{{_graphic.alt}}{{/if}}';
+    return true;
   });
   mutateContent('Graphic - add longdescription attribute', async content => {
     graphics.forEach(graphic => {
@@ -24,6 +36,23 @@ describe('Graphic - v5.1.0 to v6.2.0', async () => {
     graphics.forEach(graphic => {
       graphic._defaultScrollPercent = 0;
     });
+    return true;
+  });
+  mutateContent('Graphic - add scrollAriaLabel attribute', async content => {
+    const course = content.find(({ _type }) => _type === 'course');
+    if (course?._globals?._components?._graphic) return true;
+    return true;
+  });
+  checkContent('Graphic - check _globals._components._graphic attribute', async content => {
+    if (courseGraphicGlobals === undefined) {
+      throw new Error('Graphic - _globals._components._graphic invalid');
+    }
+    return true;
+  });
+  checkContent('Graphic - check _globals._components._graphic attribute', async content => {
+    if (courseGraphicGlobals?.scrollAriaLabel === undefined) {
+      throw new Error('Graphic - _globals._components._graphic.scrollAriaLabel invalid');
+    }
     return true;
   });
   checkContent('Graphic - check longdescription attribute', async content => {
