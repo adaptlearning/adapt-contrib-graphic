@@ -49,7 +49,7 @@ describe('Graphic - v5.1.0 to v6.2.0', async () => {
     }
     return true;
   });
-  checkContent('Graphic - check _globals._components._graphic attribute', async content => {
+  checkContent('Graphic - check _globals._components._graphic.scrollAriaLabel attribute', async content => {
     if (courseGraphicGlobals?.scrollAriaLabel === undefined) {
       throw new Error('Graphic - _globals._components._graphic.scrollAriaLabel invalid');
     }
