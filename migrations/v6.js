@@ -43,15 +43,15 @@ describe('Graphic - v5.1.0 to v6.2.0', async () => {
     if (course?._globals?._components?._graphic) return true;
     return true;
   });
-  checkContent('Graphic - check _globals._components._graphic attribute', async content => {
+  checkContent('Graphic - check globals _graphic attribute', async content => {
     if (courseGraphicGlobals === undefined) {
-      throw new Error('Graphic - _globals._components._graphic invalid');
+      throw new Error('Graphic - globals _graphic invalid');
     }
     return true;
   });
-  checkContent('Graphic - check _globals._components._graphic.scrollAriaLabel attribute', async content => {
+  checkContent('Graphic - check globals scrollAriaLabel attribute', async content => {
     if (courseGraphicGlobals?.scrollAriaLabel === undefined) {
-      throw new Error('Graphic - _globals._components._graphic.scrollAriaLabel invalid');
+      throw new Error('Graphic - globals scrollAriaLabel invalid');
     }
     return true;
   });
