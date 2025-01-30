@@ -79,5 +79,5 @@ describe('Graphic - v5.1.0 to v6.2.0', async () => {
     if (!isValid) throw new Error('Graphic - _defaultScrollPercent attribute invalid');
     return true;
   });
-  updatePlugin('Graphic - update to v6.2.0', { name: 'adapt-contrib-graphic', version: '6.2.0', framework: '>=5.5' });
+  updatePlugin('Graphic - update to v6.2.0', { name: 'adapt-contrib-graphic', version: '6.2.0', framework: '>=5.19.1' });
 });
