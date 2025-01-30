@@ -5,7 +5,7 @@ describe('Graphic - v5.1.0 to v6.2.0', async () => {
   whereFromPlugin('Graphic - from v5.1.0', { name: 'adapt-contrib-graphic', version: '<6.2.0' });
   whereContent('Graphic - where graphic', async content => {
     graphics = content.filter(({ _component }) => _component === 'graphic');
-    if (graphics) return true;
+    return graphics.length
   });
   mutateContent('Graphic - add globals if missing', async (content) => {
     course = content.find(({ _type }) => _type === 'course');
