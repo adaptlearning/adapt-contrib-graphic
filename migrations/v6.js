@@ -9,11 +9,8 @@ describe('Graphic - v5.1.0 to v6.2.0', async () => {
   });
   mutateContent('Graphic - add globals if missing', async (content) => {
     course = content.find(({ _type }) => _type === 'course');
-    if (course?._globals?._components?._graphic) {
-      courseGraphicGlobals = course._globals._components._graphic;
-      return true;
-    }
-    courseGraphicGlobals = course._globals._components._graphic = {};
+    if (!_.has(course, '_globals._components._graphic')) _.set(course, '_globals._components._graphic', {});
+    courseGraphicGlobals = course._globals._components._graphic;
     return true;
   });
   mutateContent('Graphic - add scrollAriaLabel attribute', async content => {
