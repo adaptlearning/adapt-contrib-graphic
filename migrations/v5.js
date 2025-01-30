@@ -36,5 +36,5 @@ describe('Graphic - v2.0.3 to v5.1.0', async () => {
     if (!isValid) throw new Error('Graphic - _target attribute invalid');
     return true;
   });
-  updatePlugin('Graphic - update to v5.1.0', { name: 'adapt-contrib-graphic', version: '5.1.0', framework: '>=5.5' });
+  updatePlugin('Graphic - update to v5.1.0', { name: 'adapt-contrib-graphic', version: '5.1.0', framework: '>=5.14.0' });
 });
