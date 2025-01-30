@@ -38,11 +38,6 @@ describe('Graphic - v5.1.0 to v6.2.0', async () => {
     });
     return true;
   });
-  mutateContent('Graphic - add scrollAriaLabel attribute', async content => {
-    const course = content.find(({ _type }) => _type === 'course');
-    if (course?._globals?._components?._graphic) return true;
-    return true;
-  });
   checkContent('Graphic - check globals _graphic attribute', async content => {
     if (courseGraphicGlobals === undefined) {
       throw new Error('Graphic - globals _graphic invalid');
