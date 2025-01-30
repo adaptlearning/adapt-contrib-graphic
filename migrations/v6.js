@@ -41,7 +41,7 @@ describe('Graphic - v5.1.0 to v6.2.0', async () => {
     return true;
   });
   checkContent('Graphic - check longdescription attribute', async content => {
-    const isValid = graphics._graphic.every(({ longdescription }) => longdescription !== undefined);
+    const isValid = graphics.every(({ _graphic }) => _graphic.longdescription !== undefined);
     if (!isValid) throw new Error('Graphic - _graphic.longdescription attribute invalid');
     return true;
   });
