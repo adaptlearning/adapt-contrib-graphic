@@ -1,4 +1,5 @@
 import { describe, whereContent, whereFromPlugin, mutateContent, checkContent, updatePlugin } from 'adapt-migrations';
+import _ from 'lodash';
 
 describe('Graphic - v5.1.0 to v6.2.0', async () => {
   let graphics, course, courseGraphicGlobals;
