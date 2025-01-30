@@ -56,26 +56,17 @@ describe('Graphic - v5.1.0 to v6.2.0', async () => {
     return true;
   });
   checkContent('Graphic - check longdescription attribute', async content => {
-    let isValid = true;
-    graphics.forEach(graphic => {
-      if (graphic._graphic?.longdescription === undefined) isValid = false;
-    });
+    const isValid = graphics.every(graphic => graphic._graphic.longdescription !== undefined);
     if (!isValid) throw new Error('Graphic - longdescription attribute invalid');
     return true;
   });
   checkContent('Graphic - check _isScrollable attribute', async content => {
-    let isValid = true;
-    graphics.forEach(graphic => {
-      if (graphic._isScrollable === undefined) isValid = false;
-    });
+    const isValid = graphics.every(graphic => graphic._graphic._isScrollable !== undefined);
     if (!isValid) throw new Error('Graphic - _isScrollable attribute invalid');
     return true;
   });
   checkContent('Graphic - check _defaultScrollPercent attribute', async content => {
-    let isValid = true;
-    graphics.forEach(graphic => {
-      if (graphic._defaultScrollPercent === undefined) isValid = false;
-    });
+    const isValid = graphics.every(graphic => graphic._graphic._defaultScrollPercent !== undefined);
     if (!isValid) throw new Error('Graphic - _defaultScrollPercent attribute invalid');
     return true;
   });
