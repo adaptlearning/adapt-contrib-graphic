@@ -6,7 +6,7 @@ describe('Graphic - v2.0.3 to v5.1.0', async () => {
   whereFromPlugin('Graphic - from v2.0.3', { name: 'adapt-contrib-graphic', version: '<5.1.0' });
   whereContent('Graphic - where graphic', async content => {
     graphics = content.filter(({ _component }) => _component === 'graphic');
-    if (graphics) return true;
+    return graphics.length
   });
   mutateContent('Graphic - add _url attribute', async content => {
     graphics.forEach(graphic => {
