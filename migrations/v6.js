@@ -55,3 +55,24 @@ describe('Graphic - v5.1.0 to v6.2.0', async () => {
   });
   updatePlugin('Graphic - update to v6.2.0', { name: 'adapt-contrib-graphic', version: '6.2.0', framework: '>=5.19.1' });
 });
+
+describe('Graphic - v6.2.0 to v6.2.5', async () => {
+  let graphics;
+  whereFromPlugin('Graphic - from v5.1.0', { name: 'adapt-contrib-graphic', version: '<6.2.5' });
+  whereContent('Graphic - where graphic', async content => {
+    graphics = content.filter(({ _component }) => _component === 'graphic');
+    return graphics.length;
+  });
+  mutateContent('Graphic - update _target default', async content => {
+    graphics.forEach(({ _graphic }) => {
+      if (_graphic._target !== '_blank') _graphic._target = '_blank';
+    });
+    return true;
+  });
+  checkContent('Graphic - check _target default', async content => {
+    const isValid = graphics.every(({ _graphic }) => _graphic._target === '_blank');
+    if (!isValid) throw new Error('Graphic - _target default invalid');
+    return true;
+  });
+  updatePlugin('Graphic - update to v6.2.5', { name: 'adapt-contrib-graphic', version: '6.2.5', framework: '>=5.19.1' });
+});
