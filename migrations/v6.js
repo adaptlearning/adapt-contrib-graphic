@@ -44,7 +44,7 @@ describe('Graphic - v5.1.0 to v6.2.0', async () => {
     return true;
   });
   checkContent('Graphic - check _isScrollable attribute', async content => {
-    const isValid = graphics.every(({ _isScrollable }) => _isScrollable !== undefined);
+    const isValid = graphics.every(({ _isScrollable }) => _isScrollable !== undefined && typeof _isScrollable === 'boolean');
     if (!isValid) throw new Error('Graphic - _isScrollable attribute invalid');
     return true;
   });
