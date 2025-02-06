@@ -14,7 +14,7 @@ describe('Graphic - v5.1.0 to v6.2.0', async () => {
     courseGraphicGlobals = course._globals._components._graphic;
     return true;
   });
-  mutateContent('Graphic - add scrollAriaLabel attribute', async content => {
+  mutateContent('Graphic - add globals scrollAriaLabel attribute', async content => {
     courseGraphicGlobals.scrollAriaLabel = 'Use the scrollbar to pan the image left and right. {{#if _graphic.alt}}{{_graphic.alt}}{{/if}}';
     return true;
   });
