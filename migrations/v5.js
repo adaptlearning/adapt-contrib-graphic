@@ -1,9 +1,8 @@
 import { describe, whereContent, whereFromPlugin, mutateContent, checkContent, updatePlugin } from 'adapt-migrations';
 import _ from 'lodash';
 
-let graphics;
-
 describe('Graphic - v2.0.3 to v5.1.0', async () => {
+  let graphics;
   whereFromPlugin('Graphic - from v2.0.3', { name: 'adapt-contrib-graphic', version: '<5.1.0' });
   whereContent('Graphic - where graphic', async content => {
     graphics = content.filter(({ _component }) => _component === 'graphic');
