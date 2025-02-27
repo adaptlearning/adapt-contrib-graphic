@@ -1,9 +1,9 @@
 import { describe, whereContent, whereFromPlugin, mutateContent, checkContent, updatePlugin, getCourse } from 'adapt-migrations';
 import _ from 'lodash';
 
-describe('Graphic - v5.1.0 to v6.2.0', async () => {
+describe('Graphic - v6.1.1 to v6.2.0', async () => {
   let graphics, course, courseGraphicGlobals;
-  whereFromPlugin('Graphic - from v5.1.0', { name: 'adapt-contrib-graphic', version: '<6.2.0' });
+  whereFromPlugin('Graphic - from v6.1.1', { name: 'adapt-contrib-graphic', version: '<6.2.0' });
   whereContent('Graphic - where graphic', async content => {
     graphics = content.filter(({ _component }) => _component === 'graphic');
     return graphics.length;
@@ -56,9 +56,9 @@ describe('Graphic - v5.1.0 to v6.2.0', async () => {
   updatePlugin('Graphic - update to v6.2.0', { name: 'adapt-contrib-graphic', version: '6.2.0', framework: '>=5.19.1' });
 });
 
-describe('Graphic - v6.2.0 to v6.2.5', async () => {
+describe('Graphic - v6.2.4 to v6.2.5', async () => {
   let graphics;
-  whereFromPlugin('Graphic - from v5.1.0', { name: 'adapt-contrib-graphic', version: '<6.2.5' });
+  whereFromPlugin('Graphic - from v6.2.4', { name: 'adapt-contrib-graphic', version: '<6.2.5' });
   whereContent('Graphic - where graphic', async content => {
     graphics = content.filter(({ _component }) => _component === 'graphic');
     return graphics.length;
