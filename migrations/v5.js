@@ -4,7 +4,7 @@ import _ from 'lodash';
 describe('Graphic - v5.0.0 to v5.1.0', async () => {
   let graphics;
 
-  whereFromPlugin('Graphic - from v5.0.0', { name: 'adapt-contrib-graphic', version: '<5.1.0' });
+  whereFromPlugin('Graphic - from v5.0.0', { name: 'adapt-contrib-graphic', version: '>=2.0.0 <5.1.0' });
 
   whereContent('Graphic - where graphic', async content => {
     graphics = getComponents('graphic');
