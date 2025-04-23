@@ -33,10 +33,6 @@
           "type": "object",
           "title": "Graphic",
           "default": {},
-          "required": [
-            "large",
-            "small"
-          ],
           "properties": {
             "alt": {
               "type": "string",
