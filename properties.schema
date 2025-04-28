@@ -65,7 +65,7 @@
         },
         "large": {
           "type": "string",
-          "required": true,
+          "required": false,
           "default": "",
           "inputType": "Asset:image",
           "validators": ["required"],
@@ -73,7 +73,7 @@
         },
         "small": {
           "type": "string",
-          "required": true,
+          "required": false,
           "default": "",
           "inputType": "Asset:image",
           "validators": ["required"],
