@@ -65,6 +65,9 @@
               "type": "string",
               "title": "Small",
               "description": "The small sized image for mobile devices",
+              "_adapt": {
+                "linkedTo": "large"
+              },
               "_backboneForms": {
                 "type": "Asset",
                 "media": "image"
